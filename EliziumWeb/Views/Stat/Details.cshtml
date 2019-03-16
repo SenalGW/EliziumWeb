@@ -1,21 +1,30 @@
 ﻿@using Newtonsoft.Json.Linq
 @model JObject
 
-@{
-    ViewData["Title"] = "Статистика";
-}
-
-<link rel="stylesheet" href="~/css/blocks_items.css" />
-
-<div class="text-center">
-    <h1 class="display-4">Статистика @ViewBag.UserName</h1>
-
-    <h2>Подобрано</h2>
-
-    <div>
-        @{
-            var i = ((JObject)Model["stats"]["minecraft:picked_up"]).Property("minecraft:diamond");
-            <span class="item item_264 item_264_0"></span> <span>@i.Value</span>
-        }
-    </div>
+<div class="card bg-light mb-3" style="max-width: 30rem;">
+    <div class="card-header">Предметы</div>
+	<div class="card-body">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th scope="col">Предмет</th>
+					<th scope="col">Подобрано</th>
+					<th scope="col">Выброщено</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<abbr title="Алмаз" class="initialism"><span class="item item_264 item_264_0"></span></abbr>
+					</td>
+					@{
+					var iPick = ((JObject)Model["stats"]["minecraft:picked_up"]).Property("minecraft:diamond");
+					var iDropped = ((JObject)Model["stats"]["minecraft:dropped"]).Property("minecraft:diamond");
+					<td>@iPick.Value</td>
+					<td>@iDropped.Value</td>
+					}
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </div>
