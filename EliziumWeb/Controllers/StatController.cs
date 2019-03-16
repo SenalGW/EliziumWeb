@@ -41,7 +41,7 @@ namespace EliziumWeb.Controllers
 
             ViewBag.UserName = name;
 
-            return View(data);
+            return PartialView(data);
         }
     }
 }
