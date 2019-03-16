@@ -23,16 +23,16 @@ var PlayTime = ((JObject)Model["stats"]["minecraft:custom"]).Property("minecraft
 				<div class="card-body">
 					<div class="row justify-content-start">
 						<div class="col col-auto">
-							<h5>Время в игре <span class="badge badge-secondary">@PlayTime.Value мин.</span></h5>
+							<h5>Время в игре <span class="badge badge-secondary">@PlayTime?.Value мин.</span></h5>
 						</div>
 						<div class="col col-auto">
-							<h5>Смертей <span class="badge badge-secondary">@deaths.Value</span></h5>
+							<h5>Смертей <span class="badge badge-secondary">@deaths?.Value</span></h5>
 						</div>
 						<div class="col col-auto">
-							<h5>Убил игроков <span class="badge badge-secondary">@PlayerKill.Value</span></h5>
+							<h5>Убил игроков <span class="badge badge-secondary">@PlayerKill?.Value</span></h5>
 						</div>
 						<div class="col col-auto">
-							<h5>Убил мобов <span class="badge badge-secondary">@KillMob.Value</span></h5>
+							<h5>Убил мобов <span class="badge badge-secondary">@KillMob?.Value</span></h5>
 						</div>
 					</div>
 				</div>
@@ -55,15 +55,15 @@ var PlayTime = ((JObject)Model["stats"]["minecraft:custom"]).Property("minecraft
 								<td>
 									<abbr title="Алмаз"><span class="item diamond"></span></abbr>
 								</td>
-								<td>@iPickDiamond.Value</td>
-								<td>@iDroppedDiamond.Value</td>
+								<td>@iPickDiamond?.Value</td>
+								<td>@iDroppedDiamond?.Value</td>
 							</tr>
 							<tr>
 								<td>
 									<abbr title="Слиток железа"><span class="item iron_ingot"></span></abbr>
 								</td>
-								<td>@iPickIron.Value</td>
-								<td>@iDroppedIron.Value</td>
+								<td>@iPickIron?.Value</td>
+								<td>@iDroppedIron?.Value</td>
 							</tr>
 						</tbody>
 					</table>
@@ -86,13 +86,13 @@ var PlayTime = ((JObject)Model["stats"]["minecraft:custom"]).Property("minecraft
 								<td>
 									<abbr title="Камень"><span class="item stone"></span></abbr>
 								</td>
-								<td>@iDestroyStone.Value</td>
+								<td>@iDestroyStone?.Value</td>
 							</tr>
 							<tr>
 								<td>
 									<abbr title="Железная руда"><span class="item iron_ore"></span></abbr>
 								</td>
-								<td>@iDestroyIron.Value</td>
+								<td>@iDestroyIron?.Value</td>
 							</tr>
 						</tbody>
 					</table>
