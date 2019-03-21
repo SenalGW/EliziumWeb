@@ -14,25 +14,24 @@ var KillMob = ((JObject)Model["stats"]["minecraft:custom"]).Property("minecraft:
 var PlayerKill = ((JObject)Model["stats"]["minecraft:custom"]).Property("minecraft:player_kills");
 var deaths = ((JObject)Model["stats"]["minecraft:custom"]).Property("minecraft:deaths");
 var PlayTime = ((JObject)Model["stats"]["minecraft:custom"]).Property("minecraft:play_one_minute");
-}
 <div class="container">
 	<div class="row justify-content-md-center">
 		<div class="col-md-10">
 			<div class="card bg-light mb-3">
-				<div class="card-header"><h3>Основная</h3></div>
+				<div class="card-header"><h5>Основная</h5></div>
 				<div class="card-body">
 					<div class="row justify-content-start">
 						<div class="col col-auto">
-							<h5>Время в игре <span class="badge badge-secondary">@PlayTime.Value мин.</span></h5>
+							<h6>Время в игре <span class="badge badge-secondary">@PlayTime?.Value</span> мин.</h6>
 						</div>
 						<div class="col col-auto">
-							<h5>Смертей <span class="badge badge-secondary">@deaths.Value</span></h5>
+							<h6>Смертей <span class="badge badge-secondary">@deaths?.Value</span></h6>
 						</div>
 						<div class="col col-auto">
-							<h5>Убил игроков <span class="badge badge-secondary">@PlayerKill.Value</span></h5>
+							<h6>Убил игроков <span class="badge badge-secondary">@PlayerKill?.Value</span></h6>
 						</div>
 						<div class="col col-auto">
-							<h5>Убил мобов <span class="badge badge-secondary">@KillMob.Value</span></h5>
+							<h6>Убил мобов <span class="badge badge-secondary">@KillMob?.Value</span></h6>
 						</div>
 					</div>
 				</div>
@@ -40,7 +39,7 @@ var PlayTime = ((JObject)Model["stats"]["minecraft:custom"]).Property("minecraft
 		</div>
 		<div class="col-md-6">
 			<div class="card bg-light mb-3" style="max-width: 30rem;">
-				<div class="card-header"><h3>Предметы</h3></div>
+				<div class="card-header"><h5>Предметы</h5></div>
 				<div class="card-body">
 					<table class="table table-striped">
 						<thead>
@@ -53,17 +52,17 @@ var PlayTime = ((JObject)Model["stats"]["minecraft:custom"]).Property("minecraft
 						<tbody>
 							<tr>
 								<td>
-									<abbr title="Алмаз"><span class="item diamond"></span></abbr>
+									<abbr title="Алмаз"><span class="item diamond img-thumbnail"></span></abbr>
 								</td>
-								<td>@iPickDiamond.Value</td>
-								<td>@iDroppedDiamond.Value</td>
+								<td>@iPickDiamond?.Value</td>
+								<td>@iDroppedDiamond?.Value</td>
 							</tr>
 							<tr>
 								<td>
-									<abbr title="Слиток железа"><span class="item iron_ingot"></span></abbr>
+									<abbr title="Слиток железа"><span class="item iron_ingot img-thumbnail"></span></abbr>
 								</td>
-								<td>@iPickIron.Value</td>
-								<td>@iDroppedIron.Value</td>
+								<td>@iPickIron?.Value</td>
+								<td>@iDroppedIron?.Value</td>
 							</tr>
 						</tbody>
 					</table>
@@ -72,7 +71,7 @@ var PlayTime = ((JObject)Model["stats"]["minecraft:custom"]).Property("minecraft
 		</div>
 		<div class="col col-md-4">
 			<div class="card bg-light mb-3" style="max-width: 20rem;">
-				<div class="card-header"><h3>Блоки</h3></div>
+				<div class="card-header"><h5>Блоки</h5></div>
 				<div class="card-body">
 					<table class="table table-striped">
 						<thead>
@@ -84,15 +83,15 @@ var PlayTime = ((JObject)Model["stats"]["minecraft:custom"]).Property("minecraft
 						<tbody>
 							<tr>
 								<td>
-									<abbr title="Камень"><span class="item stone"></span></abbr>
+									<abbr title="Камень"><span class="item stone img-thumbnail"></span></abbr>
 								</td>
-								<td>@iDestroyStone.Value</td>
+								<td>@iDestroyStone?.Value</td>
 							</tr>
 							<tr>
 								<td>
-									<abbr title="Железная руда"><span class="item iron_ore"></span></abbr>
+									<abbr title="Железная руда"><span class="item iron_ore img-thumbnail"></span></abbr>
 								</td>
-								<td>@iDestroyIron.Value</td>
+								<td>@iDestroyIron?.Value</td>
 							</tr>
 						</tbody>
 					</table>
@@ -101,3 +100,4 @@ var PlayTime = ((JObject)Model["stats"]["minecraft:custom"]).Property("minecraft
 		</div>
 	</div>
 </div>
+}
